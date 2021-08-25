@@ -1,3 +1,4 @@
+let mealState = []
 const toHTML = (s) =>
 {
     const parser = new DOMParser()
@@ -31,6 +32,8 @@ window.onload = () =>
     ordenar.onsubmit = (evt) =>
     {
         evt.preventDefault()
+        const submit = document.getElementById('submit')
+        submit.setAttribute('disabled', true)
         const mealId = document.getElementById('meals-id')
         const mealIdValue= mealId.value
         if(!mealIdValue)
@@ -40,7 +43,7 @@ window.onload = () =>
         }
         const order = {
             meal_id: mealIdValue,
-            user_id: 'chanchito triste',
+            user_id: 'Mi',
         }
         console.log(order)
         fetch('http://localhost:3000/api/orders/',
@@ -48,13 +51,20 @@ window.onload = () =>
             method : 'POST',
             headers : {'Content-Type':'application/json'},
             body : JSON.stringify(order),
-        }).then(x => console.log(x))
+        }).then(x => x.json())
+          .then(respuesta => 
+            {
+                const renderedOrder = renderOrder(respuesta, mealState)
+                const ordersList = document.getElementById('orders-list')
+                ordersList.appendChild(renderedOrder)
+                submit.removeAttribute('disabled')
+            })
 
     }
     fetch('http://localhost:3000/api/meals/')
     .then(response => response.json())
     .then(data => 
-        {
+        {   mealState = data
             const mealsList = document.getElementById("meals-list")
             const submit = document.getElementById("submit")
             const itemList = data.map(renderItem)
