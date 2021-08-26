@@ -42,6 +42,7 @@ ul {
      margin: 0 auto;
      margin-top: 100px;
      padding: 15px;
+     padding-bottom: 30px;
  }
  .login-form p {
      margin-bottom: 5px;
@@ -65,3 +66,7 @@ ul {
      width: calc(100% - 4px);
      margin-top: 15px;
  }
+.form-title {
+    text-align: center;
+    font-size: 24px;
+}
