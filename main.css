@@ -1,17 +1,17 @@
-body 
+#app 
 {
     background-color: #ccc;
     display: flex;
 }
-body div {
+#app div {
     flex-grow: 1;
     background-color: #fff;
     margin: 5px;
     margin-top: 0px;
 }
-/*body div:first-child {
+#meals {
 margin-left: 0px;
-}*/
+}
 #orders {
 margin-right: 0px;
 }
@@ -37,7 +37,7 @@ ul {
  .selected {
      background-color: #2a91bd;
  }
- .form-main {
+ #app .form-main {
      max-width: 300px;
      margin: 0 auto;
      margin-top: 100px;

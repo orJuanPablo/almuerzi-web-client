@@ -5,18 +5,22 @@
             <link rel="stylesheet" href="main.css" type="text/css" />
             <meta charset="utf-8">
         </head>
-        <body>
-            <div class="form-main">
+        <body> 
+            <div id = "app">
                 
+            </div>
+        </body>
+        <template id = "login-view">
+            <div class="form-main">                
                     <p class="form-title">Iniciar sesión</p>
-                    <form class="login-form">
+                    <form class="login-form" id="login-form">
                     <div>
-                        <p>Nombre de usuario</p>
-                        <input placeholder="Nombre de usuario" />
+                        <p>Email</p>
+                        <input id = "email" placeholder="Nombre de usuario" />
                     </div>
                     <div>
                         <p>Contrasña</p>
-                        <input placeholder="Contraseña" type="password"/>
+                        <input placeholder="Contraseña" id="password" type="password"/>
                     </div>
                     <div>    
                         <button class="btn">
@@ -26,23 +30,23 @@
                     </form>
                 </div>
             </div>
-            <template id="orders-view">
-                <div id = "meals">
-                    <ul id = "meals-list">
-                        <p>Cargando...</p>
-                    </ul>
-                    <form id = "order">
-                        <input type="submit" id="submit" disabled/>
-                        <input id = 'meals-id' type="hidden" />
-                    </form>
-                </div>
-                <div id = "orders">
-                <ul id = "orders-list">
+        </template>
+        <template id="orders-view">
+            <div id = "meals">
+                <ul id = "meals-list">
                     <p>Cargando...</p>
                 </ul>
-                </div>
-            </template>
-        </body>
+                <form id = "order">
+                    <button id="submit" disabled>Enviar</button>
+                    <input id = 'meals-id' type="hidden" />
+                </form>
+            </div>
+            <div id = "orders">
+            <ul id = "orders-list">
+                <p>Cargando...</p>
+            </ul>
+            </div>
+        </template>
         <script src = "main.js" >            
         </script>
 </html>
