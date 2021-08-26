@@ -1,6 +1,6 @@
 body 
 {
-    background-color: #eee;
+    background-color: #ccc;
     display: flex;
 }
 body div {
@@ -9,9 +9,9 @@ body div {
     margin: 5px;
     margin-top: 0px;
 }
-body div:first-child {
+/*body div:first-child {
 margin-left: 0px;
-}
+}*/
 #orders {
 margin-right: 0px;
 }
@@ -36,4 +36,32 @@ ul {
 }
  .selected {
      background-color: #2a91bd;
+ }
+ .form-main {
+     max-width: 300px;
+     margin: 0 auto;
+     margin-top: 100px;
+     padding: 15px;
+ }
+ .login-form p {
+     margin-bottom: 5px;
+     font-size: 14px;
+ }
+ form input {
+     width: calc(100% - 10px);
+     height: 24px;
+     padding-left: 5px;
+     background-color: #dedede;
+     border: solid 0px;
+     border-radius: 4px;
+     color: #555;
+ }
+ .btn{
+     border: solid 0px;
+     padding: 10px 15px;
+     background-color: #2a91bd;
+     color: #fff;
+     border-radius: 4px;
+     width: calc(100% - 4px);
+     margin-top: 15px;
  }
