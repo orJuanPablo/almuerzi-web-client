@@ -26,7 +26,7 @@ const renderOrder = (order, meals) =>
     const elemento = toHTML(`<li data-id=${order._id}>${meal.name} - ${order.user_id}</li>`)
     return elemento
 }
-window.onload = () =>
+const initForm = () =>  
 {
     const ordenar = document.getElementById('order')
     ordenar.onsubmit = (evt) =>
@@ -59,8 +59,11 @@ window.onload = () =>
                 ordersList.appendChild(renderedOrder)
                 submit.removeAttribute('disabled')
             })
-
     }
+
+}
+const initData = () =>
+{
     fetch('http://localhost:3000/api/meals/')
     .then(response => response.json())
     .then(data => 
@@ -81,5 +84,10 @@ window.onload = () =>
                     listOrders.forEach(elemento => ordersList.appendChild(elemento))
                 })
         })
+}
+window.onload = () =>
+{
+    initForm()
+    initData()  
     
 }
